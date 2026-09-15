@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Safita Clean</title>
+  <meta name="description" content="Regular cleaning, deep cleaning, and move-in/move-out cleaning services in Safita and nearby villages.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div data-include="partials/header.html"></div>
+
+  <main id="main-content">
+
+    <!-- 1. Services hero -->
+    <section class="services-hero">
+      <img src="assets/images/services-hero.jpg" alt="Bright, sunlit living room with a comfortable sofa and view of the Safita hillside" class="services-hero__bg">
+      <div class="services-hero__overlay" aria-hidden="true"></div>
+      <div class="container">
+        <div class="services-hero__content">
+          <h1>Cleaning Services for Safita &amp; Nearby Villages</h1>
+          <p class="services-hero__subtext">Simple, reliable cleaning designed around your home.</p>
+          <div class="services-hero__actions">
+            <a href="booking.html" class="btn btn--primary">Book a Cleaning</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Interactive service showcase -->
+    <section class="section">
+      <div class="container">
+        <h2>Our Services</h2>
+
+        <div class="showcase" id="services-showcase">
+          <div class="showcase__tabs" role="tablist" aria-label="Choose a cleaning service">
+            <button type="button" class="showcase__tab is-selected" role="tab" id="tab-regular" data-service="regular" aria-selected="true" aria-controls="panel-regular" tabindex="0">Regular Cleaning</button>
+            <button type="button" class="showcase__tab" role="tab" id="tab-deep" data-service="deep" aria-selected="false" aria-controls="panel-deep" tabindex="-1">Deep Cleaning</button>
+            <button type="button" class="showcase__tab" role="tab" id="tab-moving" data-service="moving" aria-selected="false" aria-controls="panel-moving" tabindex="-1">Move-In / Move-Out Cleaning</button>
+          </div>
+
+          <div class="showcase__visual">
+            <img src="assets/images/regular-cleaning.jpg" alt="Bright dining area with a view into a clean, tidy kitchen" class="showcase__image showcase__image--regular is-active" data-image="regular" aria-hidden="false">
+            <img src="assets/images/deep-cleaning.jpg" alt="Detailed, clean kitchen with tiled backsplash and open shelving" class="showcase__image showcase__image--deep" data-image="deep" aria-hidden="true">
+            <img src="assets/images/move-in-out.jpg" alt="Bright, freshly prepared empty room with a hillside view" class="showcase__image showcase__image--moving" data-image="moving" aria-hidden="true">
+          </div>
+
+          <div class="showcase__details">
+            <div class="showcase__panel is-active" id="panel-regular" role="tabpanel" aria-labelledby="tab-regular">
+              <h3>Regular Cleaning</h3>
+              <p class="showcase__best-for"><strong>Best for:</strong> Routine home maintenance.</p>
+              <p>Routine cleaning to keep your home consistently fresh.</p>
+              <div class="showcase__lists">
+                <div>
+                  <p class="showcase__list-label">Includes</p>
+                  <ul>
+                    <li>Kitchen</li>
+                    <li>Bathroom</li>
+                    <li>1 additional room</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="showcase__list-label">Available</p>
+                  <ul>
+                    <li>Additional rooms</li>
+                    <li>Optional extras</li>
+                  </ul>
+                </div>
+              </div>
+              <p class="showcase__price"><span class="placeholder-text">[Price]</span></p>
+              <a href="booking.html" class="btn btn--secondary">Book Regular Cleaning</a>
+            </div>
+
+            <div class="showcase__panel" id="panel-deep" role="tabpanel" aria-labelledby="tab-deep">
+              <h3>Deep Cleaning</h3>
+              <p class="showcase__best-for"><strong>Best for:</strong> A more thorough, detailed clean.</p>
+              <p>A more thorough clean for the spaces everyday cleaning doesn't always reach.</p>
+              <div class="showcase__lists">
+                <div>
+                  <p class="showcase__list-label">Includes</p>
+                  <ul>
+                    <li>Kitchen</li>
+                    <li>Bathroom</li>
+                    <li>1 additional room</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="showcase__list-label">Available</p>
+                  <ul>
+                    <li>Additional rooms</li>
+                    <li>Optional extras</li>
+                  </ul>
+                </div>
+              </div>
+              <p class="showcase__price"><span class="placeholder-text">[Price]</span></p>
+              <a href="booking.html" class="btn btn--secondary">Book Deep Cleaning</a>
+            </div>
+
+            <div class="showcase__panel" id="panel-moving" role="tabpanel" aria-labelledby="tab-moving">
+              <h3>Move-In / Move-Out Cleaning</h3>
+              <p class="showcase__best-for"><strong>Best for:</strong> Preparing or handing over a property.</p>
+              <p>A detailed clean to prepare a home before moving in or leave it ready for the next occupant.</p>
+              <div class="showcase__lists">
+                <div>
+                  <p class="showcase__list-label">Includes</p>
+                  <ul>
+                    <li>Kitchen</li>
+                    <li>Bathrooms</li>
+                    <li>Rooms</li>
+                    <li>General detailed cleaning</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="showcase__list-label">Available</p>
+                  <ul>
+                    <li>Move-In or Move-Out</li>
+                    <li>Optional extras</li>
+                  </ul>
+                </div>
+              </div>
+              <p class="showcase__price"><span class="placeholder-text">[Price]</span></p>
+              <a href="booking.html" class="btn btn--secondary">Book Move-In / Move-Out</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Service structure explainer -->
+    <section class="section section--surface">
+      <div class="container">
+        <h2>A Simple Way to Customize Your Cleaning</h2>
+        <p>A simple, flexible structure that lets you choose the cleaning your home needs.</p>
+
+        <div class="structure">
+          <div class="structure__block">
+            <svg class="structure__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="4" y="4" width="16" height="16" rx="3"></rect>
+            </svg>
+            <p class="structure__label">Base Service</p>
+            <p class="structure__desc">Kitchen, bathroom, and one additional room.</p>
+          </div>
+
+          <span class="structure__plus" aria-hidden="true">+</span>
+
+          <div class="structure__block">
+            <svg class="structure__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="4" y="4" width="16" height="16" rx="3"></rect>
+              <path d="M12 9v6M9 12h6"></path>
+            </svg>
+            <p class="structure__label">Additional Rooms</p>
+            <p class="structure__desc">Add more rooms as your home needs.</p>
+          </div>
+
+          <span class="structure__plus" aria-hidden="true">+</span>
+
+          <div class="structure__block">
+            <svg class="structure__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3v4M12 17v4M4.2 6.2l2.8 2.8M17 15l2.8 2.8M3 12h4M17 12h4M4.2 17.8L7 15M17 9l2.8-2.8"></path>
+            </svg>
+            <p class="structure__label">Optional Extras</p>
+            <p class="structure__desc">Add extras like windows or appliances.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. FAQ -->
+    <section class="section">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-accordion">
+          <div class="faq-accordion__item">
+            <h3>
+              <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-panel-1" id="faq-trigger-1">
+                What areas do you serve?
+                <svg class="faq-accordion__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+            </h3>
+            <div class="faq-accordion__panel-wrap">
+              <div class="faq-accordion__panel" id="faq-panel-1" role="region" aria-labelledby="faq-trigger-1">
+                <p>We currently serve Safita and nearby villages.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-accordion__item">
+            <h3>
+              <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-panel-2" id="faq-trigger-2">
+                Do I need to book my whole house?
+                <svg class="faq-accordion__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+            </h3>
+            <div class="faq-accordion__panel-wrap">
+              <div class="faq-accordion__panel" id="faq-panel-2" role="region" aria-labelledby="faq-trigger-2">
+                <p>No — our base service covers the kitchen, bathroom, and one additional room. You can add more rooms as needed.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-accordion__item">
+            <h3>
+              <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-panel-3" id="faq-trigger-3">
+                Do I need to be home during the cleaning?
+                <svg class="faq-accordion__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+            </h3>
+            <div class="faq-accordion__panel-wrap">
+              <div class="faq-accordion__panel" id="faq-panel-3" role="region" aria-labelledby="faq-trigger-3">
+                <p class="placeholder-note">This policy hasn't been confirmed yet.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-accordion__item">
+            <h3>
+              <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-panel-4" id="faq-trigger-4">
+                Do I need to provide cleaning supplies?
+                <svg class="faq-accordion__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+            </h3>
+            <div class="faq-accordion__panel-wrap">
+              <div class="faq-accordion__panel" id="faq-panel-4" role="region" aria-labelledby="faq-trigger-4">
+                <p class="placeholder-note">This policy hasn't been confirmed yet.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Puzzle CTA -->
+    <section class="puzzle-cta">
+      <div class="puzzle-cta__bg" aria-hidden="true">
+        <div class="puzzle-cta__piece"></div>
+        <div class="puzzle-cta__piece"></div>
+        <div class="puzzle-cta__piece"></div>
+        <div class="puzzle-cta__piece"></div>
+        <div class="puzzle-cta__piece"></div>
+        <div class="puzzle-cta__piece"></div>
+        <div class="puzzle-cta__piece"></div>
+        <div class="puzzle-cta__piece"></div>
+        <div class="puzzle-cta__piece"></div>
+      </div>
+      <div class="puzzle-cta__scrim" aria-hidden="true"></div>
+      <div class="container puzzle-cta__content">
+        <h2>Ready to get started?</h2>
+        <p>Tell us what your home needs, and we'll take it from there.</p>
+        <a href="booking.html" class="btn btn--primary">Book Now</a>
+      </div>
+    </section>
+
+  </main>
+
+  <div data-include="partials/footer.html"></div>
+
+  <script src="js/include.js" defer></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/faq-accordion.js" defer></script>
+  <script src="js/services-showcase.js" defer></script>
+</body>
+</html>

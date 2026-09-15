@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Safita Clean</title>
+  <meta name="description" content="Get in touch with Safita Clean for cleaning and home services in Safita and nearby villages.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div data-include="partials/header.html"></div>
+
+  <main id="main-content">
+
+    <!-- 1. Hero -->
+    <section class="section contact-hero">
+      <div class="container contact-hero__grid">
+        <div>
+          <h1>Let's Talk</h1>
+          <p class="contact-hero__subtext">Have a question about our services or your cleaning request? We're here to help.</p>
+        </div>
+        <div class="contact-hero__icons" aria-hidden="true">
+          <div class="contact-hero__icon contact-hero__icon--house">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"></path><path d="M5.5 10v9a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-9"></path></svg>
+          </div>
+          <div class="contact-hero__icon contact-hero__icon--message">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5h16v11a1 1 0 0 1-1 1H8l-4 3.5v-3.5H4a1 1 0 0 1-1-1v-10a1 1 0 0 1 1-1Z"></path></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Contact details + form -->
+    <section class="section">
+      <div class="container">
+        <div class="contact-layout">
+
+        <div class="contact-details">
+          <div class="contact-detail">
+            <h3>Phone</h3>
+            <p><span class="placeholder-text">[Phone Number]</span></p>
+          </div>
+          <div class="contact-detail">
+            <h3>Email</h3>
+            <p><span class="placeholder-text">[Email Address]</span></p>
+          </div>
+          <div class="contact-detail">
+            <h3>Location</h3>
+            <p>Safita &amp; nearby villages</p>
+            <svg class="map-decoration" viewBox="0 0 220 90" aria-hidden="true">
+              <path d="M0 70 Q 30 30 60 55 T 120 45 T 220 60" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" opacity="0.35"></path>
+              <circle cx="60" cy="55" r="4" fill="var(--color-accent)"></circle>
+              <circle cx="130" cy="42" r="4" fill="var(--color-accent)"></circle>
+              <circle cx="190" cy="57" r="4" fill="var(--color-accent)"></circle>
+              <circle cx="35" cy="50" r="3" fill="var(--color-primary)"></circle>
+            </svg>
+          </div>
+
+          <div class="prompt-card">
+            <h3>Ready to book?</h3>
+            <p>Go directly to our booking form and tell us what you need.</p>
+            <a href="booking.html" class="btn btn--primary">Request a Booking</a>
+          </div>
+        </div>
+
+        <form id="contact-form" class="contact-form" novalidate>
+          <fieldset class="form-group">
+            <legend>Send us a message</legend>
+
+            <div class="form-field">
+              <label for="contact-name">Full Name</label>
+              <input type="text" id="contact-name" name="contact_name" required aria-describedby="error-contact-name">
+              <p class="form-error" id="error-contact-name" aria-live="polite"></p>
+            </div>
+
+            <div class="form-field">
+              <label for="contact-phone">Phone Number</label>
+              <input type="tel" id="contact-phone" name="phone" required aria-describedby="error-contact-phone">
+              <p class="form-error" id="error-contact-phone" aria-live="polite"></p>
+            </div>
+
+            <div class="form-field">
+              <label for="contact-email">Email</label>
+              <input type="email" id="contact-email" name="email">
+              <p class="form-hint">Optional — if you'd like a written reply.</p>
+            </div>
+
+            <div class="form-field">
+              <span class="form-field__label">Subject</span>
+              <div class="pill-choice">
+                <input type="radio" name="subject" value="general" id="subject-general" class="pill-choice__input">
+                <label for="subject-general" class="pill-choice__label">General Question</label>
+
+                <input type="radio" name="subject" value="service" id="subject-service" class="pill-choice__input">
+                <label for="subject-service" class="pill-choice__label">Service Question</label>
+
+                <input type="radio" name="subject" value="booking" id="subject-booking" class="pill-choice__input">
+                <label for="subject-booking" class="pill-choice__label">Booking Question</label>
+
+                <input type="radio" name="subject" value="other" id="subject-other" class="pill-choice__input">
+                <label for="subject-other" class="pill-choice__label">Other</label>
+              </div>
+              <p class="form-error" id="error-subject" aria-live="polite"></p>
+            </div>
+
+            <div class="form-field">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" rows="4" required aria-describedby="error-contact-message"></textarea>
+              <p class="form-error" id="error-contact-message" aria-live="polite"></p>
+            </div>
+
+            <button type="submit" class="btn btn--primary">Send Message</button>
+          </fieldset>
+        </form>
+
+        </div>
+
+        <!-- Success state -->
+        <div class="booking-success" id="contact-success" hidden tabindex="-1">
+          <h2>Thanks — we've received your message</h2>
+          <p>We'll get back to you as soon as we can.</p>
+          <p class="placeholder-note">Email delivery isn't connected yet — this is a development confirmation only.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div data-include="partials/footer.html"></div>
+
+  <script src="js/include.js" defer></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/contact-form.js" defer></script>
+</body>
+</html>

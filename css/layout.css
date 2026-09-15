@@ -1,0 +1,199 @@
+/* ==========================================================================
+   layout.css
+   How things are arranged: header/nav, footer, containers, sections.
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-md);
+}
+
+/* Narrower reading width for forms — the full-width container is too wide
+   for comfortable field scanning. */
+.container--narrow {
+  max-width: 720px;
+}
+
+.section {
+  padding-block: var(--space-xl);
+}
+
+/* Generic section background variant — reuses the same surface color
+   already used for cards/header. Lets any page alternate background
+   bands for visual rhythm without a page-specific class name. */
+.section--surface {
+  background: var(--color-surface);
+}
+
+main {
+  min-height: 50vh;
+}
+
+/* --- Header --- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  color: var(--color-text);
+}
+.logo:hover {
+  text-decoration: none;
+}
+.logo span {
+  color: var(--color-primary);
+}
+
+.main-nav__list {
+  display: flex;
+  gap: var(--space-lg);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav__list a {
+  color: var(--color-text);
+  font-weight: 500;
+  font-size: var(--fs-sm);
+  letter-spacing: 0.01em;
+  padding: var(--space-2xs) 0;
+  border-bottom: 2px solid transparent;
+}
+
+.main-nav__list a:hover,
+.main-nav__list a[aria-current="page"] {
+  color: var(--color-primary);
+  text-decoration: none;
+  border-bottom-color: var(--color-primary);
+}
+
+.nav-toggle {
+  display: none; /* shown only on mobile, see breakpoint below */
+}
+
+/* --- Footer --- */
+.site-footer {
+  background: var(--color-text);
+  color: #E7ECE9;
+  margin-top: var(--space-2xl);
+}
+
+.site-footer p {
+  color: #C7D1CC;
+}
+
+.site-footer a {
+  color: #E7ECE9;
+}
+.site-footer a:hover {
+  color: #fff;
+}
+
+.site-footer__inner {
+  padding-block: var(--space-xl) var(--space-lg);
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.site-footer__brand {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 var(--space-xs);
+}
+.site-footer__brand span {
+  color: var(--color-accent);
+}
+
+.site-footer__heading {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #A9B6B1;
+  margin: 0 0 var(--space-sm);
+}
+
+.site-footer__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  font-size: var(--fs-sm);
+}
+
+.site-footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-block: var(--space-sm);
+  font-size: var(--fs-sm);
+  color: #A9B6B1;
+  text-align: center;
+}
+
+/* --- Mobile nav (below tablet width) --- */
+@media (max-width: 768px) {
+  .main-nav {
+    position: fixed;
+    inset: var(--header-height) 0 0 0;
+    background: var(--color-surface);
+    transform: translateX(100%);
+    transition: transform var(--transition-base);
+    overflow-y: auto;
+  }
+
+  .main-nav.is-open {
+    transform: translateX(0);
+  }
+
+  /* translateX is a physical (X-axis) transform — it has no logical
+     equivalent, so the slide-in direction needs an explicit RTL mirror.
+     Without this, the menu would slide in from the wrong edge once the
+     page is set to dir="rtl" (e.g. for Arabic). */
+  [dir="rtl"] .main-nav {
+    transform: translateX(-100%);
+  }
+  [dir="rtl"] .main-nav.is-open {
+    transform: translateX(0);
+  }
+
+  .main-nav__list {
+    flex-direction: column;
+    gap: 0;
+    padding: var(--space-md);
+  }
+
+  .main-nav__list a {
+    display: block;
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .site-footer__inner {
+    grid-template-columns: 1fr;
+  }
+}

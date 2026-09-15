@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Cleaning | Safita Clean</title>
+  <meta name="description" content="Request a cleaning appointment in Safita and nearby villages. Quick and simple booking.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div data-include="partials/header.html"></div>
+
+  <main id="main-content">
+    <section class="section">
+      <div class="container container--narrow">
+        <h1>Book a Cleaning</h1>
+        <p>Fill in a few details about your home and we'll be in touch to confirm your appointment.</p>
+
+        <form id="booking-form" class="booking-form" novalidate>
+
+          <!-- Service Type -->
+          <fieldset class="form-group">
+            <legend>Which service would you like to book?</legend>
+            <div class="pill-choice">
+              <input type="radio" name="service" value="regular" id="service-regular" class="pill-choice__input" checked>
+              <label for="service-regular" class="pill-choice__label">Regular Cleaning</label>
+
+              <input type="radio" name="service" value="deep" id="service-deep" class="pill-choice__input">
+              <label for="service-deep" class="pill-choice__label">Deep Cleaning</label>
+
+              <input type="radio" name="service" value="moving" id="service-moving" class="pill-choice__input">
+              <label for="service-moving" class="pill-choice__label">Move-In / Move-Out Cleaning</label>
+            </div>
+          </fieldset>
+
+          <!-- Regular / Deep fields -->
+          <div class="service-fields" data-service-fields="regular,deep">
+            <p class="form-note">Base service: Your booking includes the kitchen, bathroom, and one additional room.</p>
+
+            <fieldset class="form-group">
+              <legend>Additional Rooms</legend>
+              <div class="stepper-group">
+                <div class="stepper">
+                  <label for="rooms-bedroom-rd" class="stepper__label">Bedroom</label>
+                  <div class="stepper__controls">
+                    <button type="button" class="stepper__btn" data-stepper-decrement aria-controls="rooms-bedroom-rd" aria-label="Decrease Bedroom">&minus;</button>
+                    <input type="number" id="rooms-bedroom-rd" name="rooms_bedroom_rd" class="stepper__input" min="0" max="9" value="0" inputmode="numeric">
+                    <button type="button" class="stepper__btn" data-stepper-increment aria-controls="rooms-bedroom-rd" aria-label="Increase Bedroom">+</button>
+                  </div>
+                </div>
+                <div class="stepper">
+                  <label for="rooms-livingroom-rd" class="stepper__label">Living Room</label>
+                  <div class="stepper__controls">
+                    <button type="button" class="stepper__btn" data-stepper-decrement aria-controls="rooms-livingroom-rd" aria-label="Decrease Living Room">&minus;</button>
+                    <input type="number" id="rooms-livingroom-rd" name="rooms_livingroom_rd" class="stepper__input" min="0" max="9" value="0" inputmode="numeric">
+                    <button type="button" class="stepper__btn" data-stepper-increment aria-controls="rooms-livingroom-rd" aria-label="Increase Living Room">+</button>
+                  </div>
+                </div>
+                <div class="stepper">
+                  <label for="rooms-office-rd" class="stepper__label">Office</label>
+                  <div class="stepper__controls">
+                    <button type="button" class="stepper__btn" data-stepper-decrement aria-controls="rooms-office-rd" aria-label="Decrease Office">&minus;</button>
+                    <input type="number" id="rooms-office-rd" name="rooms_office_rd" class="stepper__input" min="0" max="9" value="0" inputmode="numeric">
+                    <button type="button" class="stepper__btn" data-stepper-increment aria-controls="rooms-office-rd" aria-label="Increase Office">+</button>
+                  </div>
+                </div>
+              </div>
+              <div class="form-field">
+                <label for="other-room-rd">Other room (please specify)</label>
+                <input type="text" id="other-room-rd" name="other_room_rd">
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Move-In / Move-Out fields -->
+          <div class="service-fields" data-service-fields="moving" hidden>
+            <fieldset class="form-group">
+              <legend>Is this a move-in or move-out cleaning?</legend>
+              <div class="pill-choice">
+                <input type="radio" name="move_type" value="movein" id="move-type-in" class="pill-choice__input">
+                <label for="move-type-in" class="pill-choice__label">Move-In</label>
+
+                <input type="radio" name="move_type" value="moveout" id="move-type-out" class="pill-choice__input">
+                <label for="move-type-out" class="pill-choice__label">Move-Out</label>
+              </div>
+              <p class="form-error" id="error-move-type" aria-live="polite"></p>
+            </fieldset>
+
+            <fieldset class="form-group">
+              <legend>Property Details</legend>
+              <div class="stepper-group">
+                <div class="stepper">
+                  <label for="rooms-bedroom-mio" class="stepper__label">Bedrooms</label>
+                  <div class="stepper__controls">
+                    <button type="button" class="stepper__btn" data-stepper-decrement aria-controls="rooms-bedroom-mio" aria-label="Decrease Bedrooms">&minus;</button>
+                    <input type="number" id="rooms-bedroom-mio" name="rooms_bedroom_mio" class="stepper__input" min="0" max="9" value="0" inputmode="numeric">
+                    <button type="button" class="stepper__btn" data-stepper-increment aria-controls="rooms-bedroom-mio" aria-label="Increase Bedrooms">+</button>
+                  </div>
+                </div>
+                <div class="stepper">
+                  <label for="rooms-livingroom-mio" class="stepper__label">Living Rooms</label>
+                  <div class="stepper__controls">
+                    <button type="button" class="stepper__btn" data-stepper-decrement aria-controls="rooms-livingroom-mio" aria-label="Decrease Living Rooms">&minus;</button>
+                    <input type="number" id="rooms-livingroom-mio" name="rooms_livingroom_mio" class="stepper__input" min="0" max="9" value="0" inputmode="numeric">
+                    <button type="button" class="stepper__btn" data-stepper-increment aria-controls="rooms-livingroom-mio" aria-label="Increase Living Rooms">+</button>
+                  </div>
+                </div>
+                <div class="stepper">
+                  <label for="rooms-office-mio" class="stepper__label">Offices</label>
+                  <div class="stepper__controls">
+                    <button type="button" class="stepper__btn" data-stepper-decrement aria-controls="rooms-office-mio" aria-label="Decrease Offices">&minus;</button>
+                    <input type="number" id="rooms-office-mio" name="rooms_office_mio" class="stepper__input" min="0" max="9" value="0" inputmode="numeric">
+                    <button type="button" class="stepper__btn" data-stepper-increment aria-controls="rooms-office-mio" aria-label="Increase Offices">+</button>
+                  </div>
+                </div>
+                <div class="stepper">
+                  <label for="rooms-bathroom-mio" class="stepper__label">Bathrooms</label>
+                  <div class="stepper__controls">
+                    <button type="button" class="stepper__btn" data-stepper-decrement aria-controls="rooms-bathroom-mio" aria-label="Decrease Bathrooms">&minus;</button>
+                    <input type="number" id="rooms-bathroom-mio" name="rooms_bathroom_mio" class="stepper__input" min="0" max="9" value="0" inputmode="numeric">
+                    <button type="button" class="stepper__btn" data-stepper-increment aria-controls="rooms-bathroom-mio" aria-label="Increase Bathrooms">+</button>
+                  </div>
+                </div>
+              </div>
+              <p class="form-error" id="error-property-rooms" aria-live="polite"></p>
+            </fieldset>
+
+            <fieldset class="form-group">
+              <legend>Furnishing Status</legend>
+              <div class="pill-choice">
+                <input type="radio" name="furnishing" value="empty" id="furnishing-empty" class="pill-choice__input">
+                <label for="furnishing-empty" class="pill-choice__label">Empty</label>
+
+                <input type="radio" name="furnishing" value="partial" id="furnishing-partial" class="pill-choice__input">
+                <label for="furnishing-partial" class="pill-choice__label">Partially Furnished</label>
+
+                <input type="radio" name="furnishing" value="full" id="furnishing-full" class="pill-choice__input">
+                <label for="furnishing-full" class="pill-choice__label">Fully Furnished</label>
+              </div>
+              <p class="form-error" id="error-furnishing" aria-live="polite"></p>
+            </fieldset>
+          </div>
+
+          <!-- Optional Extras (shared across all services) -->
+          <fieldset class="form-group">
+            <legend>Optional Extras</legend>
+            <div class="checkbox-group">
+              <label><input type="checkbox" name="extras" value="windows" id="extras-windows"> Window cleaning</label>
+              <label><input type="checkbox" name="extras" value="fridge" id="extras-fridge"> Inside refrigerator</label>
+              <label><input type="checkbox" name="extras" value="oven" id="extras-oven"> Inside oven</label>
+              <label><input type="checkbox" name="extras" value="sofa" id="extras-sofa"> Sofa cleaning</label>
+              <label><input type="checkbox" name="extras" value="balcony" id="extras-balcony"> Balcony cleaning</label>
+            </div>
+          </fieldset>
+
+          <!-- Date & Time -->
+          <fieldset class="form-group">
+            <legend>Date &amp; Time</legend>
+            <div class="form-field">
+              <label for="preferred-date">Preferred Date</label>
+              <input type="date" id="preferred-date" name="date" required aria-describedby="error-date">
+              <p class="form-error" id="error-date" aria-live="polite"></p>
+            </div>
+            <div class="form-field">
+              <span class="form-field__label">Preferred Time</span>
+              <div class="pill-choice">
+                <input type="radio" name="time" value="morning" id="time-morning" class="pill-choice__input">
+                <label for="time-morning" class="pill-choice__label">Morning</label>
+
+                <input type="radio" name="time" value="afternoon" id="time-afternoon" class="pill-choice__input">
+                <label for="time-afternoon" class="pill-choice__label">Afternoon</label>
+
+                <input type="radio" name="time" value="evening" id="time-evening" class="pill-choice__input">
+                <label for="time-evening" class="pill-choice__label">Evening</label>
+              </div>
+              <p class="form-error" id="error-time" aria-live="polite"></p>
+            </div>
+            <p class="form-hint">We'll confirm exact timing with you.</p>
+          </fieldset>
+
+          <!-- Contact Information -->
+          <fieldset class="form-group">
+            <legend>Contact Information</legend>
+            <div class="form-field">
+              <label for="customer-name">Full Name</label>
+              <input type="text" id="customer-name" name="customer_name" required aria-describedby="error-customer-name">
+              <p class="form-error" id="error-customer-name" aria-live="polite"></p>
+            </div>
+            <div class="form-field">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" required aria-describedby="error-phone">
+              <p class="form-error" id="error-phone" aria-live="polite"></p>
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email">
+              <p class="form-hint">Optional — if you'd like a written confirmation.</p>
+            </div>
+          </fieldset>
+
+          <!-- Location -->
+          <fieldset class="form-group">
+            <legend>Where should we come?</legend>
+            <div class="pill-choice">
+              <input type="radio" name="area" value="safita" id="area-safita" class="pill-choice__input" checked>
+              <label for="area-safita" class="pill-choice__label">Safita</label>
+
+              <input type="radio" name="area" value="village" id="area-village" class="pill-choice__input">
+              <label for="area-village" class="pill-choice__label">Nearby village</label>
+            </div>
+
+            <div class="form-field" data-village-field hidden>
+              <label for="village-name">Village name</label>
+              <input type="text" id="village-name" name="village_name" aria-describedby="error-village-name">
+              <p class="form-error" id="error-village-name" aria-live="polite"></p>
+            </div>
+
+            <div class="form-field">
+              <label for="address">Address / Directions</label>
+              <textarea id="address" name="address" rows="3" required aria-describedby="error-address"></textarea>
+              <p class="form-hint">Landmarks are welcome — e.g. near the old mill, past the blue gate.</p>
+              <p class="form-error" id="error-address" aria-live="polite"></p>
+            </div>
+          </fieldset>
+
+          <!-- Special Instructions -->
+          <div class="form-field">
+            <label for="notes">Special Instructions</label>
+            <textarea id="notes" name="notes" rows="3"></textarea>
+            <p class="form-hint">Anything else we should know before we arrive?</p>
+          </div>
+
+          <button type="submit" class="btn btn--primary">Request Booking</button>
+        </form>
+
+        <!-- Success state, shown after front-end validation passes -->
+        <div class="booking-success" id="booking-success" hidden tabindex="-1">
+          <h2>Thanks — we've got your request</h2>
+          <p>We'll be in touch to confirm the details of your cleaning.</p>
+          <p class="placeholder-note">Email delivery isn't connected yet — this is a development confirmation only.</p>
+        </div>
+
+        <p class="booking-alt-contact">Prefer to talk it through? Call us at <span class="placeholder-text">[Phone Number]</span>.</p>
+        <p class="placeholder-note">[Trust footnote — payment/confirmation policy not yet confirmed]</p>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="partials/footer.html"></div>
+
+  <script src="js/include.js" defer></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/booking-form.js" defer></script>
+</body>
+</html>
